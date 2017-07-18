@@ -6,5 +6,11 @@
       yum: name={{ item }} state=present
       with_items:
         - httpd
+    - name: Enable httpd server
+      service: name=httpd state=started enabled=yes
     - name: firewalld httpd
-      firewalld: service=https permanent=true state=enabled
+      firewalld: port=80/tcp permanent=true state=enabled
+#    - name: firewalld httpd2
+ #     firewalld: service=http permanent=true state=enabled
+    - firewalld: zone=public service=http state=enabled permanent=true immediate=yes
+    - service: name=firewalld state=restarted
