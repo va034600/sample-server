@@ -1,0 +1,10 @@
+- hosts: vagrants
+  user: vagrant
+  become: yes
+  tasks:
+    - name: install httpd package
+      yum: name={{ item }} state=present
+      with_items:
+        - httpd
+    - name: firewalld httpd
+      firewalld: service=https permanent=true state=enabled
