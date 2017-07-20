@@ -1,0 +1,6 @@
+- hosts: vagrants
+  user: vagrant
+  become: yes
+  tasks:
+    - include_vars: test_var.yml
+    - template: src=template.j2 dest=/tmp/test3.txt owner=vagrant group=vagrant mode=0644
