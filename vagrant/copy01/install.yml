@@ -1,0 +1,6 @@
+- hosts: vagrants
+  user: vagrant
+  become: yes
+  tasks:
+    - name: Install libselinux-python
+      yum: name=libselinux-python state=present
