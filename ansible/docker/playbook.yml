@@ -11,6 +11,10 @@
         creates: docker-ce.repo
     - name: install docker-ce
       yum: name=docker-ce state=present
+    - name: Docker グループにユーザー追加
+      user: name=vagrant groups=docker append=yes
+      tags: dockerhost
+      become: True
     - name: restart docker
       systemd:
         name: docker.service
