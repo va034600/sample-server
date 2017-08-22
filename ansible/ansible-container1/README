@@ -1,0 +1,23 @@
+参考
+
+install ansible-container
+https://docs.ansible.com/ansible-container/installation.html#running-from-source
+
+AnsibleでDockerコンテナを作成する「Ansible Container」を使ってみる
+http://knowledge.sakura.ad.jp/knowledge/9473/
+
+新しいAnsible Containerを使うとPlaybookだけでDockerイメージをビルドできる
+http://qiita.com/kjtanaka/items/ebf38ead92e4aa1fb50a
+
+
+ansible-container インストール(for mac)
+
+$ git clone https://github.com/ansible/ansible-container.git
+$ cd ansible-container
+$ pip install -e .[docker,openshift]
+$ pip install --upgrade setuptools
+
+
+$ ansible-container build
+$ ansible-container run
+
