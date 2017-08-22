@@ -1,4 +1,6 @@
 参考
+
+あなたがdocker-ceをcentos7にansibleでインストールしたい時に読むべき記事
 http://yaaamaaaguuu.hatenablog.com/entry/2017/03/03/220813
 
 
