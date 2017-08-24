@@ -1,0 +1,5 @@
+- hosts: db
+  user: "{{ ssh_remote_user }}"
+  become: yes
+  roles:
+    - mysql

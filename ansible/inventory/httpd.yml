@@ -1,0 +1,5 @@
+- hosts: web
+  user: "{{ ssh_remote_user }}"
+  become: yes
+  roles:
+    - apache2
