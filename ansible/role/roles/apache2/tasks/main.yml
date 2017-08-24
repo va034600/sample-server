@@ -1,0 +1,7 @@
+- name: Install apache2 (RedHat).
+  yum: name=httpd
+  when: "ansible_os_family == 'RedHat'"
+ 
+- name: Install apache2 (Debian).
+  apt: name=apache2
+  when: "ansible_os_family == 'Debian'"

@@ -1,0 +1,5 @@
+- hosts: all
+  user: vagrant
+  become: yes
+  roles:
+    - apache2
