@@ -14,7 +14,7 @@ ansible-container インストール(for mac)
 
 $ git clone https://github.com/ansible/ansible-container.git
 $ cd ansible-container
-$ pip install -e .[docker,openshift]
+$ pip install -e .[docker]
 $ pip install --upgrade setuptools
 
 
