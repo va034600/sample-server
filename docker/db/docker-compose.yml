@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    build: ./db
+    image: sample/db:1.0.0
+    container_name: sample-db
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "${MYSQL_PORT}:3306"
+    env_file:
+      - ./dev.env
