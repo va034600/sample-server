@@ -1,2 +1,5 @@
 .vagrant
 *.retry
+data
+.env
+dev.env
