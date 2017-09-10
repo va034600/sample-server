@@ -1,0 +1,17 @@
+- hosts: vagrants
+  user: vagrant
+  become: yes
+  tasks:
+    - name: Installing packages
+      action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=present"
+      with_items:
+        - python-setuptools
+
+    - name: Installing dependencies
+      easy_install:
+        name: pip
+
+    - name: Installing docker compose
+      pip:
+        name: docker-compose
+        state: present

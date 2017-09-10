@@ -25,32 +25,3 @@
         state: restarted
         daemon_reload: yes
         enabled: yes
-
-
-
-
-
-
-
-
-    - name: Installing packages
-      action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=present"
-      with_items:
-        - python-setuptools
-
-    - name: Installing dependencies
-      easy_install:
-        name: pip
-
-    # - name: Installing docker-py
-    #   pip:
-    #     name: docker-py
-    # #    version: "{{ docker_version }}"
-    #     state: present
-
-    - name: Installing docker compose
-      pip:
-        name: docker-compose
-    #    version: "{{ docker_compose_version }}"
-        state: present
-
