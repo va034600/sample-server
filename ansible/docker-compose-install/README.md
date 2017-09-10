@@ -7,6 +7,7 @@ $ vagrant up
 
 $ ansible-playbook -i hosts site.yml
 
+$ mysql -u root -P 13306 -h 127.0.0.1 -p
 
 
 

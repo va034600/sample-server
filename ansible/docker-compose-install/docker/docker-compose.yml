@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    container_name: sample-db
+    build: ./
+    image: sample/db:1.0.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      - ../data/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
