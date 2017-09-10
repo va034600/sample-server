@@ -2,7 +2,12 @@
   user: vagrant
   become: yes
   tasks:
-    - copy: src=./docker/docker-compose.yml dest=./ owner=vagrant group=vagrant mode=0644
-    - copy: src=./docker/Dockerfile dest=./ owner=vagrant group=vagrant mode=0644
-    - command: docker-compose build
-    - command: docker-compose up -d
+    - name: create dir
+      file: path=./db/ state=directory
+    - copy: src=./docker/ dest=./db/ directory_mode=yes
+
+    # - copy: src=./docker/docker-compose.yml dest=./ owner=vagrant group=vagrant mode=0644
+    # - copy: src=./docker/Dockerfile dest=./ owner=vagrant group=vagrant mode=0644
+
+    - command: docker-compose build chdir=./db
+    - command: docker-compose up -d chdir=./db
