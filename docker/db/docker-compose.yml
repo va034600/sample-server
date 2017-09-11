@@ -4,6 +4,7 @@ services:
     build: ./db
     image: sample/db:1.0.0
     container_name: sample-db
+    privileged: true
 #    environment:
 #      MYSQL_ROOT_PASSWORD: "password"
     volumes:
