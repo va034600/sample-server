@@ -18,6 +18,11 @@ $ pip install -e .[docker]
 $ pip install --upgrade setuptools
 
 
+
+
+$ pip install ansible-container[docker]
+
+
 $ ansible-container build
 $ ansible-container run
 
