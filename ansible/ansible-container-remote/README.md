@@ -4,9 +4,9 @@
 
 $ vagrant up
 
-$ ansible-playbook -i hosts site.yml
+$ export DOCKER_HOST="tcp://192.168.33.10:2375"
 
-$ export DOCKER_HOST="tcp://192.168.33.10:2376"
+$ ansible-playbook -i hosts docker.yml
 
 $ ansible-container build
 
@@ -22,4 +22,5 @@ $ vagrant halt
 
 $ vagrant destroy
 
-$ curl -vvv http://192.168.33.10:2376/version
+$ curl -vvv http://192.168.33.10:2375/version
+$ docker exec -it aaaa bash
