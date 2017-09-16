@@ -24,5 +24,8 @@ $ vagrant destroy
 $ curl -vvv http://192.168.33.10:2375/version
 
 $ docker exec -it ansiblecontainerremote_db_1 bash
+$ docker network ls
+$ docker network inspect ansiblecontainerremote_default
+$ docker logs ansiblecontainerremote_db_1
 
 tcp over SSH 接続
