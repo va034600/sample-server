@@ -3,7 +3,7 @@ settings:
   conductor_base: centos:7
 
 services:
-  httpd:
+  db:
     from: "mysql:latest"
     expose: [3306]
     environment:
