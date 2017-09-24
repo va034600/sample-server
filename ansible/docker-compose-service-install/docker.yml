@@ -19,9 +19,6 @@
       tags: dockerhost
       become: True
 
-    - name: replace ExecStart
-      replace: dest=/lib/systemd/system/docker.service regexp='^ExecStart.*$' replace='ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock' backup=yes
-
     - name: restart docker
       systemd:
         name: docker.service
