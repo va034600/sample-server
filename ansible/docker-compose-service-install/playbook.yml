@@ -30,5 +30,4 @@
     - name: "Up db server"
       docker_service:
         project_src: "/home/vagrant/transfer"
-        docker_host: 'tcp://192.168.33.10:2375'
         state: present
