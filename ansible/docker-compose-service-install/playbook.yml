@@ -1,0 +1,34 @@
+- name: "Start db"
+  hosts: vagrants
+  user: vagrant
+  become: yes
+  vars:
+    ansible_python_interpreter: python2
+  tasks:
+    - name: Installing packages
+      action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=present"
+      with_items:
+        - python-setuptools
+    - name: Installing dependencies
+      easy_install:
+        name: pip
+    # - name: "install docker-py"
+    #   pip:
+    #     name: "docker-py"
+    #     version: 1.7.1
+    #     state: present
+    - name: Installing docker compose
+      pip:
+        name: docker-compose
+        version: 1.15.0
+        state: present
+
+    - name: copy docker-compose file
+      copy: src=./transfer dest=/home/vagrant
+
+
+    - name: "Up db server"
+      docker_service:
+        project_src: "/home/vagrant/transfer"
+        docker_host: 'tcp://192.168.33.10:2375'
+        state: present
