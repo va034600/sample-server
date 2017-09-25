@@ -1,2 +1,3 @@
-- import_playbook: docker.yml
-- import_playbook: playbook.yml
+- import_playbook: docker-install.yml
+- import_playbook: docker-compose-install.yml
+- import_playbook: docker-service.yml

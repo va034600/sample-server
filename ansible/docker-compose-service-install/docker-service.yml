@@ -1,0 +1,14 @@
+- name: "docker service execute"
+  hosts: vagrants
+  user: vagrant
+  become: yes
+  vars:
+    ansible_python_interpreter: python2
+  tasks:
+    - name: copy docker-compose file
+      copy: src=./transfer dest=/home/vagrant
+
+    - name: "Up db server"
+      docker_service:
+        project_src: "/home/vagrant/transfer"
+        state: present
