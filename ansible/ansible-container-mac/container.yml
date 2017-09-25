@@ -1,13 +1,16 @@
 version: "2"
 settings:
-  conductor_base: debian:jessie-backports
+  conductor_base: centos:7
 
 services:
-  httpd:
-    from: "httpd:2.4"
-    ports:
-      - "8888:80"
+  db:
+    from: "mysql:latest"
+    expose: [3306]
     environment:
-      PATH: "/usr/local/apache2/bin:/bin:/usr/bin:/usr/local/bin"
-    command: ["httpd-foreground"]
+      MYSQL_MAJOR: 5.7
+      MYSQL_VERSION: 5.7.17
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
 registries: {}
