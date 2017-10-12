@@ -1,0 +1,7 @@
+- hosts: containers
+  connection: docker
+  vars:
+  - DOCKER_HOST: "unix://var/run/docker.sock"
+  tasks:
+    - copy: src=./test.txt dest=/tmp/test.txt
+    - command: cp -p /tmp/test.txt /tmp/test2.txt
