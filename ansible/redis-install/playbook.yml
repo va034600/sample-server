@@ -1,0 +1,15 @@
+- hosts: vagrants
+  user: vagrant
+  become: yes
+  tasks:
+  - name: enable epel
+    replace:
+      dest: /etc/yum.repos.d/epel.repo
+      regexp: "enabled *= *1"
+      replace: "enabled=0"
+
+  - name: install redis
+    yum: name=redis state=present enablerepo=epel
+
+  - name: start redis
+    service: name=redis state=started
