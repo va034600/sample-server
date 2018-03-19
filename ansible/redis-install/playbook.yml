@@ -11,7 +11,7 @@
   - name: install redis
     yum: name=redis state=present enablerepo=epel
 
-  - name: install redis
+  - name: edit redis.conf
     lineinfile:
       path: /etc/redis.conf
       state: present
