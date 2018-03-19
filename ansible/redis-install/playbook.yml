@@ -11,5 +11,15 @@
   - name: install redis
     yum: name=redis state=present enablerepo=epel
 
+  - name: install redis
+    lineinfile:
+      path: /etc/redis.conf
+      state: present
+      #置換
+      backrefs: yes
+      backup: yes
+      regexp: "^bind 127.0.0.1$"
+      line: "bind 0.0.0.0"
+
   - name: start redis
     service: name=redis state=started
