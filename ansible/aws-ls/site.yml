@@ -1,0 +1,6 @@
+- hosts: target_hosts
+  tasks:
+    - command: ls -altr
+      register: ls_log
+
+    - debug: var=ls_log

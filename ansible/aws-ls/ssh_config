@@ -1,0 +1,6 @@
+Host ls_target
+  User ec2-user
+  HostName xxx
+  IdentityFile ~/.ssh/xxx.pem
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
