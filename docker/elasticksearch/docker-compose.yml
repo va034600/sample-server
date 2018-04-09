@@ -1,0 +1,20 @@
+version: '2'
+services:
+  elasticsearch:
+    container_name: esc
+    image: esi:1.0.0
+    build: ./es
+    volumes:
+      - ./data/es:/usr/share/elasticsearch/data
+    ports:
+        - 9200:9200
+    expose:
+        - 9300
+  kibana:
+    container_name: kibanac
+    image: kibanai:1.0.0
+    build: ./kibana
+    links:
+      - elasticsearch
+    ports:
+      - 5601:5601
