@@ -1,0 +1,12 @@
+version: '2'
+services:
+  elasticsearch:
+    build: .
+    container_name: es_c_el
+    image: es_i_el:1.0.0
+    volumes:
+      - ./data/es:/usr/share/elasticsearch/data
+    ports:
+        - 9200:9200
+    expose:
+        - 9300
