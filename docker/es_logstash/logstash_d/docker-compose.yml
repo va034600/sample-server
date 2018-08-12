@@ -1,9 +1,10 @@
 version: '2'
 services:
   logstash:
+    mem_limit: 512m
     build: .
     container_name: logstash_c_el
-    image: logstash_i_el:1.0.19
+    image: logstash_i_el:1.0.20
     volumes:
       - ../data/nginx:/var/log/nginx/
     external_links:
