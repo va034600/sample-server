@@ -1,0 +1,19 @@
+version: '2'
+services:
+  logstash:
+    mem_limit: 512m
+    build: .
+    container_name: logstash_c_el
+    image: logstash_i_el:1.0.21
+    external_links:
+      - elasticsearch
+    ports:
+      - 5044:5044
+    networks:
+      - default
+      - es1_default
+
+networks:
+  es1_default:
+    external:
+      name: es_d_default
