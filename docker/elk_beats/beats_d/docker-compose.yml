@@ -1,7 +1,6 @@
 version: '2'
 services:
   beats:
-    mem_limit: 512m
     build: .
     container_name: beats_c_el
     image: beats_i_el:1.0.1
