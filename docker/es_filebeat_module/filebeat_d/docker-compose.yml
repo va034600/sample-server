@@ -1,0 +1,23 @@
+version: '2'
+services:
+  filebeat:
+    build: .
+    container_name: filebeat_c_el
+    image: filebeat_i_el:1.0.0
+    volumes:
+      - ../data/nginx:/var/log/nginx/
+    external_links:
+      - elasticsearch
+      - kibana
+    networks:
+      - default
+      - es1_default
+      - kibana1_default
+
+networks:
+  es1_default:
+    external:
+      name: es_d_default
+  kibana1_default:
+    external:
+      name: kibana_d_default

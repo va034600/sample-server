@@ -1,0 +1,11 @@
+http.host: 0.0.0.0
+
+cluster.name: "docker-cluster"
+discovery.type: single-node
+
+### x-pack functions
+xpack.security.enabled: false
+# 無償利用は1クラスタまで
+xpack.monitoring.enabled: true
+xpack.graph.enabled: false
+xpack.watcher.enabled: false
