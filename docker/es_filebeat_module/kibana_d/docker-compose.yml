@@ -1,10 +1,10 @@
 version: '2'
 services:
   kibana:
-    mem_limit: 256m
+    mem_limit: 128m
     build: .
     container_name: kibana_c_el
-    image: kibana_i_el:1.0.7
+    image: kibana_i_el:1.0.9
     external_links:
       - elasticsearch
     ports:
@@ -13,7 +13,7 @@ services:
       - default
       - es1_default
     environment:
-      NODE_OPTIONS: "--max-old-space-size=200"
+      NODE_OPTIONS: "--max-old-space-size=100"
 
 networks:
   es1_default:
