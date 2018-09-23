@@ -1,13 +1,13 @@
 version: '2'
 services:
   elasticsearch:
-    mem_limit: 1024m
+    mem_limit: 512m
     build: .
     container_name: es_c_el
-    image: es_i_el:1.0.5
+    image: es_i_el:1.0.7
     volumes:
       - ../data/es:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     environment:
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ES_JAVA_OPTS=-Xms256m -Xmx256m
