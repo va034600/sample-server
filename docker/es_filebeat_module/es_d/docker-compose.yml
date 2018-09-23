@@ -4,7 +4,7 @@ services:
     mem_limit: 512m
     build: .
     container_name: es_c_el
-    image: es_i_el:1.0.7
+    image: es_i_el:1.0.10
     volumes:
       - ../data/es:/usr/share/elasticsearch/data
     ports:

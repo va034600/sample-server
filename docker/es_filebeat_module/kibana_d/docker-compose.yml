@@ -4,7 +4,7 @@ services:
     mem_limit: 256m
     build: .
     container_name: kibana_c_el
-    image: kibana_i_el:1.0.5
+    image: kibana_i_el:1.0.7
     external_links:
       - elasticsearch
     ports:
