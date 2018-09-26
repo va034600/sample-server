@@ -1,7 +1,7 @@
 version: '2'
 services:
   filebeat:
-    mem_limit: 64m
+    mem_limit: 128m
     build: .
     container_name: filebeat_c_el
     image: filebeat_i_el:1.0.1
