@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    mem_limit: 512m
+    mem_limit: 550m
     build: .
     container_name: es_c_el
     image: es_i_el:1.0.10
